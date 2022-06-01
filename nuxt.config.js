@@ -23,6 +23,16 @@ export default {
   css: [
   ],
 
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000:https://github.com/nuxt-community/axio$
+    baseURL: '/',
+  },
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    '@nuxtjs/axios',
+  ],
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
@@ -34,11 +44,11 @@ export default {
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  privateRuntimeConfig: {
+    baseURL: process.env.BASE_URL
+  },
 }
